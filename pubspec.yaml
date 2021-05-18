@@ -2,11 +2,8 @@ name: template_package
 description: A template package for flutter apps.
 version: 0.0.1
 author:
+publish_to: none
 homepage: Template Package
-
-dependency_provider:
-  git:
-    url: https://github.com/spiderion/dependency_provider.git
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -15,6 +12,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  dependency_provider:
+    git:
+      url: https://github.com/spiderion/dependency_provider.git
 
 dev_dependencies:
   flutter_test:
