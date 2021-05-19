@@ -15,6 +15,9 @@ dependencies:
   dependency_provider:
     git:
       url: https://github.com/spiderion/dependency_provider.git
+  base_bloc:
+    git:
+      url: https://github.com/spiderion/base_bloc.git
 
 dev_dependencies:
   flutter_test:
