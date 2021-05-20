@@ -7,5 +7,5 @@ export 'package:base_bloc/bloc/primary_state.dart';
 export 'package:base_bloc/widget/base_widget.dart';
 export 'package:dependency_provider/base_sub_module.dart';
 export 'package:dependency_provider/dependency_module/dependency_module.dart';
-export 'analytics/analiytics_proxy.dart';
+export 'analytics/analytics_proxy.dart';
 export 'analytics/base_analytics.dart';
