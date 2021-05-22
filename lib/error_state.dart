@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:template_package/template_package.dart';
-import 'package:template_package/utils/translations.dart';
+import 'package:template_package/locale/translations.dart';
 
 class ErrorState extends BaseBlocPrimaryState {
   final String? message;

@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-import 'build_mode_detector.dart';
+import '../utils/build_mode_detector.dart';
 
 class Translations {
   Map<dynamic, dynamic>? localizedValues;
@@ -20,8 +20,8 @@ class Translations {
   }
 
   static Future<Translations> loadTest() async {
-    Map<dynamic, dynamic> sdf = {"test": "test"};
-    return Translations(localizedValues: sdf);
+    Map<dynamic, dynamic> test = {"test": "test"};
+    return Translations(localizedValues: test);
   }
 
   String text(String? key) {

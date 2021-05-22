@@ -1,7 +1,7 @@
 import 'package:base_bloc/bloc/base_bloc.dart';
 import 'package:base_bloc/bloc/primary_state.dart';
 import 'package:flutter/material.dart';
-import 'package:template_package/utils/translations.dart';
+import 'package:template_package/locale/translations.dart';
 
 abstract class BaseWidget extends StatefulWidget {
   final BaseBloc Function() getBloc;

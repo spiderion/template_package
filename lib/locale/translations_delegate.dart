@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:template_package/utils/translations.dart';
+import 'package:template_package/locale/translations.dart';
 
 class TranslationsDelegate extends LocalizationsDelegate<Translations> {
   final bool isTest;

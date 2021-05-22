@@ -1,4 +1,4 @@
-import 'package:template_package/utils/util.dart';
+import 'package:template_package/utils/build_mode_detector.dart';
 
 import 'base_analytics.dart';
 
