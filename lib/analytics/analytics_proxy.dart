@@ -1,4 +1,4 @@
-import 'package:template_package/util/util.dart';
+import 'package:template_package/utils/util.dart';
 
 import 'base_analytics.dart';
 
