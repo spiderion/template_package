@@ -18,6 +18,11 @@ dependencies:
   base_bloc:
     git:
       url: https://github.com/spiderion/base_bloc.git
+  fluttertoast:
+    git:
+      url: https://github.com/spiderion/FlutterToast.git
+  logger: ^1.0.0
+  equatable: ^2.0.0
 
 dev_dependencies:
   flutter_test:
