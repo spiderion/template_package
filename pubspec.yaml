@@ -21,8 +21,9 @@ dependencies:
   fluttertoast:
     git:
       url: https://github.com/spiderion/FlutterToast.git
+  clean_architecture:
+    path: /Users/ionolaru/StudioProjects/clean_architecture
   logger: ^1.0.0
-  equatable: ^2.0.0
 
 dev_dependencies:
   flutter_test:
