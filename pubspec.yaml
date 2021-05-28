@@ -22,7 +22,8 @@ dependencies:
     git:
       url: https://github.com/spiderion/FlutterToast.git
   clean_architecture:
-    path: /Users/ionolaru/StudioProjects/clean_architecture
+    git:
+      url: https://github.com/spiderion/clean_architecture.git
   logger: ^1.0.0
 
 dev_dependencies:
