@@ -15,7 +15,7 @@ class DefaultErrorStateResolver extends ErrorStateResolver {
       {Function? execute, Function? onError}) async {
     if (either is Error) {
       LoggerDefault.log.e(either.message);
-      sinkState!.add(ErrorState(message: either.message));
+      sinkState!.add(ErrorState(error: either));
       if (onError != null) onError();
     } else if (execute != null) {
       return await execute();
