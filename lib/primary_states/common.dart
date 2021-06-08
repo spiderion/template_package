@@ -8,15 +8,18 @@ class MessageInfoState extends BaseBlocPrimaryState {
   final ToastGravity? toastGravity;
   final Toast? length;
   final Color? color;
+  final Color? textColor;
 
-  MessageInfoState(this.message, {this.elementNameMessage, this.toastGravity, this.length, this.color});
+  MessageInfoState(this.message,
+      {this.textColor, this.elementNameMessage, this.toastGravity, this.length, this.color});
 
   @override
   call(param) {
     if (param is BuildContext) {
       Fluttertoast.showToast(
           msg: "${elementNameMessage ?? ""} ${Translations.of(param)!.text(message)}",
-          backgroundColor: color ?? Theme.of(param).colorScheme.primary,
+          backgroundColor: color ?? Theme.of(param).colorScheme.secondary,
+          textColor: color ?? Theme.of(param).colorScheme.onSecondary,
           toastLength: length ?? Toast.LENGTH_LONG,
           gravity: toastGravity ?? ToastGravity.BOTTOM);
     }
