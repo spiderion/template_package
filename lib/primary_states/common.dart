@@ -21,7 +21,7 @@ class MessageInfoState extends BaseBlocPrimaryState {
           backgroundColor: color ?? Theme.of(param).colorScheme.secondary,
           textColor: color ?? Theme.of(param).colorScheme.onSecondary,
           toastLength: length ?? Toast.LENGTH_LONG,
-          gravity: toastGravity ?? ToastGravity.BOTTOM);
+          gravity: toastGravity ?? ToastGravity.CENTER);
     }
   }
 }
