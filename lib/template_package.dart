@@ -17,6 +17,7 @@ export 'package:clean_architecture/request_and_response_model/result_model.dart'
 export 'package:dependency_provider/base_sub_module.dart';
 export 'package:dependency_provider/dependency_module/dependency_module.dart';
 export 'package:fluttertoast/fluttertoast.dart';
+export 'package:rxdart/rxdart.dart';
 
 export 'analytics/analytics_proxy.dart';
 export 'analytics/base_analytics.dart';

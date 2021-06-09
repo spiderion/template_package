@@ -23,6 +23,7 @@ dependencies:
       url: https://github.com/spiderion/clean_architecture.git
   fluttertoast: 8.0.7
   logger: ^1.0.0
+  rxdart: ^0.27.1
 
 dev_dependencies:
   flutter_test:
