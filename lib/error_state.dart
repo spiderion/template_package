@@ -11,18 +11,20 @@ abstract class AbstractErrorState extends BaseBlocPrimaryState {
 
   @override
   void call(BuildContext context);
+
+  String translate(BuildContext context, String key) => Translations.of(context)!.text(key);
 }
 
 class ErrorState extends AbstractErrorState {
   ErrorState({required Error error}) : super(error);
 
   @override
-  call(param) {
-    if (param is BuildContext) {
+  call(BuildContext context) {
+    if (context is BuildContext) {
       Fluttertoast.showToast(
-          msg: Translations.of(param)!.text(error.message),
+          msg: translate(context, error.message ?? ''),
           toastLength: Toast.LENGTH_LONG,
-          backgroundColor: Theme.of(param).errorColor,
+          backgroundColor: Theme.of(context).errorColor,
           gravity: ToastGravity.CENTER);
     }
   }
