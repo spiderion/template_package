@@ -1,4 +1,4 @@
-# template_packaged
+# template_package
 
 A template package for flutter apps.
 
