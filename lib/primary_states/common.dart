@@ -75,3 +75,12 @@ class CloseKeyBoard extends BaseBlocPrimaryState {
     }
   }
 }
+
+class EndProgressState extends BaseBlocPrimaryState {
+  @override
+  call(param) {
+    if (param is BuildContext) {
+      Navigator.of(param, rootNavigator: true).maybePop();
+    }
+  }
+}
