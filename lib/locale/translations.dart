@@ -34,7 +34,7 @@ class Translations {
   String text(String? key, [Map<String, String?>? arguments]) {
     String extraText = "";
     if (isInDebugMode) extraText = " not found";
-    String translation = localizedValues?[key] ?? '';
+    String translation = localizedValues?[key] ?? key! + extraText;
     if (arguments == null || arguments.length == 0) {
       return translation;
     }
@@ -45,6 +45,6 @@ class Translations {
       }
       translation = translation.replaceAll("\$$argumentKey", value);
     });
-    return translation + extraText;
+    return translation;
   }
 }
