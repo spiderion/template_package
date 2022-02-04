@@ -25,12 +25,6 @@ class Translations {
     return Translations(localizedValues: test);
   }
 
-  /* String text(String? key) {
-    String extraText = "";
-    if (isInDebugMode) extraText = " not found";
-    return localizedValues![key] ?? key! + extraText;
-  }*/
-
   String text(String? key, [Map<String, String?>? arguments]) {
     String extraText = "";
     if (isInDebugMode) extraText = " not found";
