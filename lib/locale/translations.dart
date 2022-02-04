@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:template_package/logger/logger.dart';
 
 import '../utils/build_mode_detector.dart';
 
@@ -24,9 +25,26 @@ class Translations {
     return Translations(localizedValues: test);
   }
 
-  String text(String? key) {
+  /* String text(String? key) {
     String extraText = "";
     if (isInDebugMode) extraText = " not found";
     return localizedValues![key] ?? key! + extraText;
+  }*/
+
+  String text(String? key, [Map<String, String?>? arguments]) {
+    String extraText = "";
+    if (isInDebugMode) extraText = " not found";
+    String translation = localizedValues?[key] ?? '';
+    if (arguments == null || arguments.length == 0) {
+      return translation;
+    }
+    arguments.forEach((argumentKey, value) {
+      if (value == null) {
+        LoggerDefault.log.wtf('Value for "$argumentKey" is null in call of translate(\'$key\')');
+        value = '';
+      }
+      translation = translation.replaceAll("\$$argumentKey", value);
+    });
+    return translation + extraText;
   }
 }

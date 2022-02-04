@@ -21,8 +21,8 @@ abstract class BaseState<PageType extends BaseWidget, BlocType extends BaseBloc>
     super.initState();
   }
 
-  String translate(String? text, {BuildContext? context}) {
-    return Translations.of(context ?? this.context)?.text(text) ?? "";
+  String translate(String? text, {BuildContext? context, Map<String, String?>? arguments}) {
+    return Translations.of(context ?? this.context)?.text(text, arguments) ?? "";
   }
 
   @mustCallSuper
