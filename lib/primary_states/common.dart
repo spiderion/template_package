@@ -32,19 +32,18 @@ class ContinueState extends BaseBlocPrimaryState {
 class PopPageState extends BaseBlocPrimaryState {
   final dynamic returnedParam;
   int? popTimes;
+  bool rootNavigator;
 
-  PopPageState({this.returnedParam, this.popTimes});
+  PopPageState({this.returnedParam, this.popTimes, this.rootNavigator = false});
 
   @override
   void call(param) {
-    if (param is BuildContext) {
-      if (popTimes != null) {
-        for (var i = 0; i <= popTimes!; i++) {
-          Navigator.of(param).pop(returnedParam);
-        }
-      } else {
-        Navigator.of(param).pop(returnedParam);
+    if (popTimes != null) {
+      for (var i = 0; i <= popTimes!; i++) {
+        Navigator.of(param, rootNavigator: rootNavigator).pop(returnedParam);
       }
+    } else {
+      Navigator.of(param, rootNavigator: rootNavigator).pop(returnedParam);
     }
   }
 }
