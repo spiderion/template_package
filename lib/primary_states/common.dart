@@ -50,12 +50,13 @@ class PopPageState extends BaseBlocPrimaryState {
 
 class MaybePopState extends BaseBlocPrimaryState {
   final result;
+  bool rootNavigator;
 
-  MaybePopState({this.result});
+  MaybePopState({this.result, this.rootNavigator = false});
 
   @override
   call(param) {
-    Navigator.of(param).maybePop(result);
+    Navigator.of(param, rootNavigator: rootNavigator).maybePop(result);
   }
 }
 
@@ -64,20 +65,20 @@ class CloseKeyBoard extends BaseBlocPrimaryState {
 
   @override
   call(param) {
-    if (param is BuildContext) {
-      FocusScopeNode currentFocus = FocusScope.of(param);
-      if (!currentFocus.hasPrimaryFocus) {
-        currentFocus.unfocus();
-      }
+    FocusScopeNode currentFocus = FocusScope.of(param);
+    if (!currentFocus.hasPrimaryFocus) {
+      currentFocus.unfocus();
     }
   }
 }
 
 class EndProgressState extends BaseBlocPrimaryState {
+  final bool rootNavigator;
+
+  EndProgressState({this.rootNavigator = true});
+
   @override
   call(param) {
-    if (param is BuildContext) {
-      Navigator.of(param, rootNavigator: true).maybePop();
-    }
+    Navigator.of(param, rootNavigator: rootNavigator).maybePop();
   }
 }
