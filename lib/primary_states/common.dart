@@ -34,7 +34,7 @@ class PopPageState extends BaseBlocPrimaryState {
   int? popTimes;
   bool rootNavigator;
 
-  PopPageState({this.returnedParam, this.popTimes, this.rootNavigator = false});
+  PopPageState({this.returnedParam, this.popTimes, this.rootNavigator = false });
 
   @override
   void call(param) {

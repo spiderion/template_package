@@ -1,12 +1,10 @@
-import 'package:template_package/utils/build_mode_detector.dart';
-
 import 'base_analytics.dart';
 
 class AnalyticsProxy extends BaseAnalytics {
   final List<BaseAnalytics> _analyticList;
 
-  AnalyticsProxy(this._analyticList) : super() {
-    if (!isInDebugMode) initialize();
+  AnalyticsProxy(this._analyticList, {required bool enable}) : super() {
+    if (enable) initialize();
   }
 
   @override
