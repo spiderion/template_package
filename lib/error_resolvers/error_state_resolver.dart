@@ -1,5 +1,5 @@
-import 'package:clean_architecture/error/error.dart';
-import 'package:clean_architecture/request_and_response_model/result_model.dart';
+import 'package:clean_architecture_components/error/error.dart';
+import 'package:clean_architecture_components/request_and_response_model/result_model.dart';
 import 'package:template_package/template_package.dart';
 
 import '../error_state.dart';

@@ -1,7 +1,5 @@
+import 'package:clean_architecture_components/error/error.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:template_package/locale/translations.dart';
 import 'package:template_package/template_package.dart';
 
 abstract class AbstractErrorState extends BaseBlocPrimaryState {
@@ -20,12 +18,10 @@ class ErrorState extends AbstractErrorState {
 
   @override
   call(BuildContext context) {
-    if (context is BuildContext) {
-      Fluttertoast.showToast(
-          msg: translate(context, error.message ?? ''),
-          toastLength: Toast.LENGTH_LONG,
-          backgroundColor: Theme.of(context).errorColor,
-          gravity: ToastGravity.CENTER);
-    }
+    Fluttertoast.showToast(
+        msg: translate(context, error.message ?? ''),
+        toastLength: Toast.LENGTH_LONG,
+        backgroundColor: Theme.of(context).errorColor,
+        gravity: ToastGravity.CENTER);
   }
 }
