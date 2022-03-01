@@ -1,6 +1,5 @@
 name: template_package
-description: A template package for flutter apps. that contains a custom_bloc state management and various
-clean architecture tools to increase the productivity of a flutter app.
+description: A template package for flutter apps. that contains a custom_bloc state management and various clean architecture tools to increase the productivity of a flutter app.
 version: 0.0.1
 homepage: Template Package
 
