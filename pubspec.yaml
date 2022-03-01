@@ -17,7 +17,9 @@ dependencies:
   base_bloc:
     git:
       url: https://github.com/spiderion/base_bloc.git
-  clean_architecture_components: ^0.0.1
+  clean_architecture_components:
+    git:
+      url: https://github.com/spiderion/clean_architecture.git
   fluttertoast: 8.0.7
   logger: ^1.0.0
 
