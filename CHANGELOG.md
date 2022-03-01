@@ -1,3 +1,3 @@
-## [0.0.1] - TODO: Add release date.
+## [1.0.0] - 01/03/2022.
 
- first release
+first release
