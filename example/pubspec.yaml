@@ -3,7 +3,7 @@ description: Flutter example for template_package.
 
 publish_to: 'none'
 
-version: 1.0.0+2
+version: 1.0.0+1
 
 environment:
   sdk: ">=2.16.1 <3.0.0"
