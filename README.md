@@ -4,11 +4,13 @@ A template package for flutter apps.
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+This package will give you a set of tools to speed up and keep clean the development of your app.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+- Manages the dependencies
+- Manages the flutter state in a similar but more flexible way then the common flutter bloc
+- UseCase interface to implement and organize the application logic of your app
+- LoggerDefault to log all your required logs
+- Flutter toasts are few of the utilities already incorporated.
+- BaseBlocDataState , BaseBlocPrimaryState states and BaseBlocEvent to organize the flow of data
+  between your widget and bloc
+
