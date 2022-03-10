@@ -8,6 +8,7 @@ import 'package:example/dependency/sub_modules/value_notifier_sub_module.dart';
 import 'package:flutter/material.dart';
 import 'package:template_package/template_package.dart';
 
+/// Create your Dependency module with your custom Modules
 ///CRUCIAL IMPORTANCE THIS CLASS MUST BE INITIALIZED IN MAIN ONLY ONE TIME
 ///if you need any object use [DProvider] which has access to this [subModules]
 class DependencyModule extends BaseDependencyModule {

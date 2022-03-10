@@ -1,5 +1,6 @@
 import 'package:template_package/template_package.dart';
 
+/// Define any type of DataState as you like make sure you extend [BaseBlocDataState]
 class InitialDataState extends BaseBlocDataState {
   final String text;
   final String appName;

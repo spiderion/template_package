@@ -11,10 +11,15 @@ import 'initial_event.dart';
 import 'initial_state.dart';
 
 class InitialBloc extends TemplateBloc {
+  /// Notice the useCases are injected into the constructors
   final SomeUseCase someUseCase;
+
+  /// Use the dataState streamControllers to update small portions of your UI by
+  /// listening Using streamBuilders
   final StreamController initialDataStateController = StreamController<InitialDataState>();
 
   InitialBloc(BaseAnalytics analytics, this.someUseCase) : super(analytics) {
+    /// in each bloc make sure you register all you DataStateControllers
     registerStreams([initialDataStateController.stream]);
     init();
   }
@@ -66,6 +71,7 @@ class InitialBloc extends TemplateBloc {
 
   @override
   void dispose() {
+    /// close all your dataStateControllers
     initialDataStateController.close();
     super.dispose();
   }

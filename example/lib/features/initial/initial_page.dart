@@ -6,18 +6,20 @@ import 'initial_event.dart';
 import 'initial_state.dart';
 
 class InitialPage extends BaseWidget {
-  InitialPage(TemplateBloc Function() getBloc, {Key? key}) : super(getBloc);
+  InitialPage(TemplateBloc Function() getBloc, {Key? key}) : super(getBloc, key: key);
 
   @override
   _InitialPageState createState() => _InitialPageState();
 }
 
+/// Notice that your Widget doesn't know the concrete class of the bloc only the abstract class [BaseBloc]
 class _InitialPageState extends BaseState<InitialPage, BaseBloc> {
   @override
   Widget build(BuildContext context) => mainWidget();
 
   Widget mainWidget() {
     return StreamBuilder<InitialDataState>(
+        /// Receive events from the bloc by listening to your DataStateControllers in the bloc
         stream: bloc.getStreamOfType<InitialDataState>(),
         builder: (BuildContext context, AsyncSnapshot<InitialDataState> snapshot) {
           return Scaffold(
@@ -50,6 +52,7 @@ class _InitialPageState extends BaseState<InitialPage, BaseBloc> {
           children: [
             ElevatedButton(
                 onPressed: () {
+                  /// send events to your bloc
                   bloc.event.add(SaveDataEvent('analytic_event_name_set', 'some data'));
                 },
                 child: Text(translate('save_data'))),
