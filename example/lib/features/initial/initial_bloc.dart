@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:example/navigation/navigate_to_simple_page.dart';
 import 'package:template_package/error_state.dart';
 import 'package:template_package/primary_states/common.dart';
 import 'package:template_package/template_package.dart';
@@ -39,7 +40,18 @@ class InitialBloc extends TemplateBloc {
       saveData(event.data);
     } else if (event is GetDataEvent) {
       fetchData();
+    } else if (event is OnNavigateTapEvent) {
+      onNavigateTap();
     }
+  }
+
+  void onNavigateTap() {
+    sinkState?.add(NavigateToMyPage(
+        onPop: (result) {
+          Fluttertoast.showToast(msg: 'page popped', gravity: ToastGravity.TOP);
+          print('page popped');
+        },
+        variable: 'myVar'));
   }
 
   void fetchData() {
