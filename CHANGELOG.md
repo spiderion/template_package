@@ -1,3 +1,6 @@
+## [1.0.3] - 24/06/2022.
+Update documentation and add examples in the example folder
+
 ## [1.0.2] - 10/03/2022.
 Add example code description
 ## [1.0.1] - 10/03/2022.

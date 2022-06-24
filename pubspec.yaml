@@ -1,6 +1,6 @@
 name: template_package
 description: template_package
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/spiderion/template_package
 
 environment:
