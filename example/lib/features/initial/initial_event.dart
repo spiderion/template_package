@@ -12,3 +12,10 @@ class SaveDataEvent extends BaseBlocEvent {
 class GetDataEvent extends BaseBlocEvent {
   GetDataEvent(String? analyticEventName) : super(analyticEventName);
 }
+
+
+class OnNavigateTapEvent extends BaseBlocEvent {
+  final dynamic variable;
+
+  OnNavigateTapEvent(String analytic, {this.variable}) : super(analytic);
+}

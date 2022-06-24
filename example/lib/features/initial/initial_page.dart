@@ -6,7 +6,7 @@ import 'initial_event.dart';
 import 'initial_state.dart';
 
 class InitialPage extends BaseWidget {
-  InitialPage(TemplateBloc Function() getBloc, {Key? key}) : super(getBloc, key: key);
+  InitialPage(BaseBloc Function() getBloc, {Key? key}) : super(getBloc, key: key);
 
   @override
   _InitialPageState createState() => _InitialPageState();
@@ -15,15 +15,17 @@ class InitialPage extends BaseWidget {
 /// Notice that your Widget doesn't know the concrete class of the bloc only the abstract class [BaseBloc]
 class _InitialPageState extends BaseState<InitialPage, BaseBloc> {
   @override
-  Widget build(BuildContext context) => mainWidget();
+  Widget build(BuildContext context) {
+    return mainWidget();
+  }
 
   Widget mainWidget() {
     return StreamBuilder<InitialDataState>(
-        /// Receive events from the bloc by listening to your DataStateControllers in the bloc
+        // Receive events from the bloc by listening to your DataStateControllers in the bloc
         stream: bloc.getStreamOfType<InitialDataState>(),
         builder: (BuildContext context, AsyncSnapshot<InitialDataState> snapshot) {
           return Scaffold(
-              floatingActionButton: saveButton(),
+              floatingActionButton: buttons(),
               floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
               appBar: AppBar(centerTitle: true, title: Text(snapshot.data?.appName ?? "")),
               body: Center(
@@ -32,39 +34,67 @@ class _InitialPageState extends BaseState<InitialPage, BaseBloc> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   getCustomWidget(snapshot.data?.isHorizontalStyle ?? false),
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 10),
                   Text('${translate('app_package')}:\n ${snapshot.data?.appPackage ?? ''}'),
                   const SizedBox(height: 20),
                   Text('${translate('app_name')}:\n ${snapshot.data?.appName ?? ''}'),
                   const SizedBox(height: 20),
                   Text('${translate('app_version')}:\n ${snapshot.data?.appVersion ?? ''}'),
+                  const SizedBox(height: 50),
                 ],
               )));
         });
   }
 
-  Widget saveButton() {
+  Widget buttons() {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.only(bottom: 30.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            ElevatedButton(
-                onPressed: () {
-                  /// send events to your bloc
-                  bloc.event.add(SaveDataEvent('analytic_event_name_set', 'some data'));
-                },
-                child: Text(translate('save_data'))),
-            ElevatedButton(
-                onPressed: () {
-                  bloc.event.add(GetDataEvent('analytic_event_name_get'));
-                },
-                child: Text(translate('get_data'))),
+            topButtons(),
+            SizedBox(height: 10),
+            navigateButton(),
           ],
         ),
       ),
     );
+  }
+
+  Row topButtons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        saveButton(),
+        getDataButton(),
+      ],
+    );
+  }
+
+  ElevatedButton getDataButton() {
+    return ElevatedButton(
+        onPressed: () {
+          bloc.event.add(GetDataEvent('analytic_event_name_get'));
+        },
+        child: Text(translate('get_data')));
+  }
+
+  Widget saveButton() {
+    return ElevatedButton(
+        onPressed: () {
+          /// send events to your bloc
+          bloc.event.add(SaveDataEvent('analytic_event_name_set', 'some data'));
+        },
+        child: Text(translate('save_data')));
+  }
+
+  ElevatedButton navigateButton() {
+    return ElevatedButton(
+        onPressed: () {
+          bloc.event.add(OnNavigateTapEvent('navigate_tap'));
+        },
+        child: Text(translate('navigate')));
   }
 
   Widget getCustomWidget(bool isHorizontalStyle) {
