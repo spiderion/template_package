@@ -1,3 +1,6 @@
+## [2.0.0-rc] - 25/06/2022. breaking changes
+Remove deprecated classes
+
 ## [1.1.1-rc] - 25/06/2022. breaking changes
 Remove deprecated classes
 
