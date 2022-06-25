@@ -1,7 +1,11 @@
+
+/// Enterprise business rules
+/// Extend this class to keep track of where you place your Enterprise Business Rules
 abstract class EBR {}
 
-///Enterprise business rules
 
+/// Application business rules
+/// /// Extend this class to keep track of where you place your Application Business Rules
 abstract class ABR {}
 
-///Application business rules
+

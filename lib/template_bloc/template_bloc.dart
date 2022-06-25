@@ -1,7 +1,3 @@
-import 'package:base_bloc/bloc/base_bloc.dart';
-import 'package:base_bloc/bloc/event.dart';
-import 'package:template_package/analytics/base_analytics.dart';
-import 'package:template_package/error_resolvers/error_state_resolver.dart';
 import 'package:template_package/template_package.dart';
 
 abstract class TemplateBloc extends BaseBloc {
@@ -11,6 +7,8 @@ abstract class TemplateBloc extends BaseBloc {
 
   TemplateBloc(this.analytics, {this.analyticFrameworkTypes, this.errorStateResolver});
 
+  /// this will automatically send the event received from the UI to your analytics implementation
+  /// if you passed the type list to your Template bloc when extending it
   @override
   void postUiEvent(BaseBlocEvent event) {
     if (event.analyticEventName?.isNotEmpty == true) {

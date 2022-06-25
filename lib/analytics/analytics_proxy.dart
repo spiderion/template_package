@@ -1,8 +1,11 @@
 import 'base_analytics.dart';
 
+/// A common default analytic proxy to use to capture analytics events
 class AnalyticsProxy extends BaseAnalytics {
   final List<BaseAnalytics> _analyticList;
 
+  /// Pass a list of analytics implementations of [BaseAnalytics]
+  /// If list is empty no analytics will be sent out to any element
   AnalyticsProxy(this._analyticList, {required bool enable}) : super() {
     if (enable) initialize();
   }
@@ -18,6 +21,7 @@ class AnalyticsProxy extends BaseAnalytics {
     }
   }
 
+  /// this will automatically be called on the constructor
   @override
   void initialize() {
     if (!isInitialized) {

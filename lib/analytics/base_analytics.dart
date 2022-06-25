@@ -1,3 +1,4 @@
+/// Extend this class to make a custom version of your analytics implementation
 abstract class BaseAnalytics {
   Map<String, dynamic>? updateOptions;
 

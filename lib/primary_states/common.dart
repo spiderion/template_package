@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:template_package/template_package.dart';
 
 class MessageInfoState extends BaseBlocPrimaryState {

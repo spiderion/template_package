@@ -1,3 +1,9 @@
+## [1.0.4-dev.2] - 25/06/2022.
+Update documentation and add examples in the example folder
+
+## [1.0.4-dev.1] - 25/06/2022.
+Update documentation and add examples in the example folder
+
 ## [1.0.3] - 24/06/2022.
 Update documentation and add examples in the example folder
 

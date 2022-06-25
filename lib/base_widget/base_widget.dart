@@ -2,13 +2,15 @@ import 'package:base_bloc/bloc/base_bloc.dart';
 import 'package:base_bloc/bloc/primary_state.dart';
 import 'package:flutter/material.dart';
 import 'package:template_package/locale/translations.dart';
-
+/// Base class to extend
+/// Use this when you want to manage your state with a bloc
 abstract class BaseWidget extends StatefulWidget {
   final BaseBloc Function() getBloc;
 
   BaseWidget(this.getBloc, {Key? key}) : super(key: key);
 }
 
+/// Your state page need to extend this part
 abstract class BaseState<PageType extends BaseWidget, BlocType extends BaseBloc> extends State<PageType> {
   late BlocType bloc;
 

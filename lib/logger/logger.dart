@@ -1,5 +1,9 @@
 import 'package:logger/logger.dart';
 
+/// Log your code using LoggerDefault
+/// LoggerDefault.log.e('error');
+/// LoggerDefault.log.i('message');
+/// LoggerDefault.log.d('dev message');
 class LoggerDefault {
   static Logger? _logger;
 

@@ -3,8 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:template_package/logger/logger.dart';
-
-import '../utils/build_mode_detector.dart';
+import 'package:template_package/utils/build_mode_detector.dart';
 
 class Translations {
   Map<dynamic, dynamic>? localizedValues;

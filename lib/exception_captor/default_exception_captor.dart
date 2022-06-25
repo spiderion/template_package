@@ -1,4 +1,3 @@
-import 'package:clean_architecture_components/request_and_response_model/result_model.dart';
 import 'package:flutter/services.dart';
 import 'package:template_package/template_package.dart';
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:template_package/template_package.dart';
 
+/// Extend this class to create your custom error
 abstract class AbstractErrorState extends BaseBlocPrimaryState {
   final Error error;
 
@@ -12,6 +13,7 @@ abstract class AbstractErrorState extends BaseBlocPrimaryState {
   String translate(BuildContext context, String key) => Translations.of(context)!.text(key);
 }
 
+/// A default error message to call from your bloc sinkState?.add(ErrorState(Error()));
 class ErrorState extends AbstractErrorState {
   ErrorState({required Error error}) : super(error);
 
