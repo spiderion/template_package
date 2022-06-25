@@ -8,7 +8,7 @@ description: >-
   Flutter toasts are few of the utilities already incorporated.
   BaseBlocDataState , BaseBlocPrimaryState states and BaseBlocEvent to organize the flow of data between your widget and bloc
 
-version: 1.0.4-dev.2
+version: 1.0.4
 homepage: https://github.com/spiderion/template_package
 
 environment:
