@@ -12,7 +12,6 @@ export 'package:clean_architecture_components/clean_architecture.dart';
 export 'analytics/analytics_proxy.dart';
 export 'analytics/base_analytics.dart';
 export 'base_br/business_rules.dart';
-export 'error_resolvers/error_state_resolver.dart';
 export 'locale/translations.dart';
 export 'locale/translations_delegate.dart';
 export 'logger/logger.dart';

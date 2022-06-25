@@ -12,5 +12,5 @@ class RepositorySubModule extends ISubModule {
   }
 
   InitialRepository userRepository() =>
-      InitialRepository(_coreSubModule.remoteConfig(), _coreSubModule.exceptionCaptor(), _coreSubModule.dao());
+      InitialRepository(_coreSubModule.remoteConfig(), _coreSubModule.dao());
 }

@@ -6,8 +6,7 @@ import '../models/some_model.dart';
 class InitialRepository extends BaseRepository {
   final Dao _dao;
 
-  InitialRepository(RemoteConfiguration remoteConfiguration, ExceptionCaptor exceptionCaptor, this._dao)
-      : super(remoteConfiguration);
+  InitialRepository(RemoteConfiguration remoteConfiguration, this._dao) : super(remoteConfiguration);
 
   Future<void> getSomeData(RequestObserver<dynamic, SomeModel?> requestBehaviour) async {
     try {

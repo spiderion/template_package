@@ -1,4 +1,3 @@
-import 'package:template_package/exception_captor/default_exception_captor.dart';
 import 'package:template_package/template_package.dart';
 
 import '../../core/configuration/remote_config.dart';
@@ -22,6 +21,4 @@ class CoreSubModule extends ISubModule {
   Dao dao() => DataBase({});
 
   RemoteConfiguration remoteConfig() => RemoteConfig();
-
-  ExceptionCaptor exceptionCaptor() => DefaultExceptionCaptor();
 }
