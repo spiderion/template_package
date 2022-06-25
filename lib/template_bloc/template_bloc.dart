@@ -3,9 +3,8 @@ import 'package:template_package/template_package.dart';
 abstract class TemplateBloc extends BaseBloc {
   final BaseAnalytics analytics;
   final List<Type>? analyticFrameworkTypes;
-  final ErrorStateResolver? errorStateResolver;
 
-  TemplateBloc(this.analytics, {this.analyticFrameworkTypes, this.errorStateResolver});
+  TemplateBloc(this.analytics, {this.analyticFrameworkTypes});
 
   /// this will automatically send the event received from the UI to your analytics implementation
   /// if you passed the type list to your Template bloc when extending it
