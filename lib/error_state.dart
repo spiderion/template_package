@@ -7,6 +7,7 @@ abstract class AbstractErrorState extends BaseBlocPrimaryState {
 
   AbstractErrorState(this.error);
 
+  /// This method is called by the BaseWidget when sinkState?.add(YourState) is called
   @override
   void call(BuildContext context);
 

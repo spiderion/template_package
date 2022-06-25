@@ -16,8 +16,10 @@ abstract class TemplateBloc extends BaseBloc {
     }
   }
 
+  /// Useful function to log an event without using the analytics directly
   void logEvent(String name, {Map<String, dynamic>? properties, List<Type>? sendTo}) =>
       analytics.logEvent(name, sendTo, properties: properties);
 
+  /// Used in the BaseWidgetImplementation
   void addEvent(BaseBlocEvent event) => super.event.add(event);
 }

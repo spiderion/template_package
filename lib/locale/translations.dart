@@ -5,6 +5,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:template_package/logger/logger.dart';
 import 'package:template_package/utils/build_mode_detector.dart';
 
+/// Used by BaseWidget to translate your text
 class Translations {
   Map<dynamic, dynamic>? localizedValues;
 

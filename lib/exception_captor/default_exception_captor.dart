@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:template_package/template_package.dart';
 
+/// Deprecated
 class DefaultExceptionCaptor extends ExceptionCaptor {
   @override
   Future<ResultModel> execute(Function function) async {

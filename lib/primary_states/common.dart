@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:template_package/template_package.dart';
 
+/// Use this state to show a message on your UI
+/// Used from a BaseBlocImpl by calling sinkState?.add(MessageInfoState('message'))
 class MessageInfoState extends BaseBlocPrimaryState {
   final String? message;
   final String? elementNameMessage;
@@ -28,6 +30,8 @@ class ContinueState extends BaseBlocPrimaryState {
   void call(BuildContext param) {}
 }
 
+/// Useful state to pop a page directly from your bloc
+/// Just call sinkState?.add(PopPageState());
 class PopPageState extends BaseBlocPrimaryState {
   final dynamic returnedParam;
   int? popTimes;
@@ -48,6 +52,8 @@ class PopPageState extends BaseBlocPrimaryState {
   }
 }
 
+/// A much softer way of popping a page
+/// Used from a TemplateBlocImpl by calling sinkState?.add(MaybePopState());
 class MaybePopState extends BaseBlocPrimaryState {
   final result;
   bool rootNavigator;
@@ -72,6 +78,7 @@ class CloseKeyBoard extends BaseBlocPrimaryState {
   }
 }
 
+/// Call this when you want to stop showing a progress state initiated by a StartProgressState
 class EndProgressState extends BaseBlocPrimaryState {
   final bool rootNavigator;
 
