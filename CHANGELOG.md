@@ -1,4 +1,4 @@
-## [1.1.0-dev.3] - 25/06/2022. breaking changes
+## [1.1.1-rc] - 25/06/2022. breaking changes
 Remove deprecated classes
 
 ## [1.1.0-dev.2] - 25/06/2022. breaking changes
