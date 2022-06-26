@@ -21,9 +21,9 @@ This package will give you a set of tools to speed up and keep clean the develop
 | dependency injection | BaseDependencyModule |
 
 
-## Getting Started
+# Getting Started
 
-### State Management
+## State Management
 
 https://www.youtube.com/watch?v=31tItITkkEs
 
@@ -201,7 +201,7 @@ Here is an overview of how the comunication between these elements will work
  final page = MyWidget(() => MyBloc(AnalyticsProxy([], enable: false)));
  ```
 
-### Navigation
+## Navigation
 
 https://www.youtube.com/watch?v=31tItITkkEs
 
