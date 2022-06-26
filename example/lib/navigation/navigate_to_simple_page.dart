@@ -11,7 +11,7 @@ class NavigateToMyPage extends BaseBlocPrimaryState {
 
   @override
   call(context) {
-    final page = MyWidget(() => MyBloc(AnalyticsProxy([], enable: false)));
+    final page = MyWidget(() => MyBloc());
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => page)).then((value) {
       return onPop?.call(value);
     });

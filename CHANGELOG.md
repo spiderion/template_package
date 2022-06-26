@@ -1,3 +1,7 @@
+## [2.0.0] - 25/06/2022. breaking changes
+Link to video documentation
+Remove deprecated modules
+
 ## [2.0.0-rc] - 25/06/2022. breaking changes
 Remove deprecated classes
 

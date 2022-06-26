@@ -11,7 +11,7 @@ This package will give you a set of tools to speed up and keep clean the develop
 - Flutter toasts are few of the utilities already incorporated.
 - BaseBlocDataState , BaseBlocPrimaryState states and BaseBlocEvent to organize the flow of data
   between your widget and bloc
-  
+
 | Features | Modules |
 | ------ | ------ |
 | State management | BaseWidget and TemplateBloc |
@@ -20,15 +20,19 @@ This package will give you a set of tools to speed up and keep clean the develop
 | business rules modules | ABR EBR |
 | dependency injection | BaseDependencyModule |
 
+# Getting Started
 
-## Getting Started
+## State Management
+
+https://www.youtube.com/watch?v=31tItITkkEs
 
 #### Convert the widget
 
-Let's start by converting your StatefullWidget in a widget that accepts states from the bloc (TemplageBloc)
+Let's start by converting your StatefullWidget in a widget that accepts states from the bloc (
+TemplateBloc)
 
-Extend your statefull widget with BaseWidget
-and your state class with BaseState also add an extra generic type in the <PageName, **BaseBloc**>
+Extend your stateFull widget with BaseWidget and your state class with BaseState also add an extra
+generic type in the <PageName, **BaseBloc**>
 
 ```dart
 class MyWidget extends BaseWidget {
@@ -40,7 +44,7 @@ class MyWidget extends BaseWidget {
 class _MyWidgetState extends BaseState<MyWidget, BaseBloc> {
 ```
 
-complete and simple widget example 
+complete and simple widget example
 
 ```dart
 import 'package:example/features/simple/my_event.dart';
@@ -64,7 +68,7 @@ class _MyWidgetState extends BaseState<MyWidget, BaseBloc> {
       body: myWidgetListener(),
     );
   }
-  
+
 
   // Note the streamBuilder listening the events from **MyCustomDataState** Stream
   Widget myWidgetListener() {
@@ -74,20 +78,20 @@ class _MyWidgetState extends BaseState<MyWidget, BaseBloc> {
           if (snapshot.data == null)
             return Center(
                 child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('no data received'),
-              ],
-            ));
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('no data received'),
+                  ],
+                ));
           return Center(
               child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(snapshot.data?.myCustomData ?? ''),
-              SizedBox(height: 10),
-              sendDataToBlocButton(),
-            ],
-          ));
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(snapshot.data?.myCustomData ?? ''),
+                  SizedBox(height: 10),
+                  sendDataToBlocButton(),
+                ],
+              ));
         });
   }
 
@@ -104,7 +108,7 @@ class _MyWidgetState extends BaseState<MyWidget, BaseBloc> {
 
 ```
 
-#### Create the bloc 
+#### Create the bloc
 
 ```dart
 import 'dart:async';
@@ -113,11 +117,11 @@ import 'package:example/features/initial/initial_event.dart';
 import 'package:example/features/initial/initial_state.dart';
 import 'package:template_package/template_package.dart';
 
-class MyBloc extends TemplateBloc {
+class MyBloc extends BaseBloc {
   /// create your custom streamController which will be listened by a unique widget inside your BaseWidget
   final StreamController myDataStateController = StreamController<MyCustomDataState>();
 
-  MyBloc(BaseAnalytics analytics) : super(analytics) {
+  MyBloc() {
     // IMPORTANT to register your custom controllers here otherwise you will get a FlutterError
     registerStreams([
       myDataStateController.stream,
@@ -174,21 +178,17 @@ class MyCustomDataState extends BaseBlocDataState {
 class MyCustomEvent extends BaseBlocEvent {
   final String myCustomDataFromUi;
 
-  MyCustomEvent(String? analyticEventName, this.myCustomDataFromUi) : super('analyticEventName');
+  MyCustomEvent(String? analyticEventName, this.myCustomDataFromUi) : super(analyticEventName);
 }
 
 
 ```
 
-
-
-
 Here is an overview of how the comunication between these elements will work
 
 ![Alt text](readme_images/state_management.png?raw=true "State Management")
 
-
-#### lets see how we compose these dependencies 
+#### lets see how we compose these dependencies
 
 ```dart 
 
@@ -197,6 +197,9 @@ Here is an overview of how the comunication between these elements will work
  final page = MyWidget(() => MyBloc(AnalyticsProxy([], enable: false)));
  ```
 
+## Navigation
+
+https://www.youtube.com/watch?v=31tItITkkEs
 
 #### Navigation class
 
@@ -220,19 +223,19 @@ class NavigateToMyPage extends BaseBlocPrimaryState {
 
 #### How to navigate from a widget
 
-
 ```dart
-NavigateToMyPage(params).call(context)
+ void methodInMyWidget(BuildContext context) {
+  NavigateToMyPage(params).call(context);
+}
 ```
 
 #### How to navigate from a bloc
 
-
 ```dart
- sinkState?.add(NavigateToMyPage(params));
+ void methodInMyBloc() {
+  sinkState?.add(NavigateToMyPage(params));
+}
 ```
-
-
 
 ### Architecture
 

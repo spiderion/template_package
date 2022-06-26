@@ -4,11 +4,11 @@ import 'package:example/features/simple/my_event.dart';
 import 'package:example/features/simple/my_state.dart';
 import 'package:template_package/template_package.dart';
 
-class MyBloc extends TemplateBloc {
+class MyBloc extends BaseBloc {
   /// create your custom streamController which will be listened by a unique widget inside your BaseWidget
   final StreamController myDataStateController = StreamController<MyCustomDataState>();
 
-  MyBloc(BaseAnalytics analytics) : super(analytics) {
+  MyBloc() {
     // IMPORTANT to register your custom controllers here otherwise you will get a FlutterError
     registerStreams([
       myDataStateController.stream,
