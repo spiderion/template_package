@@ -14,7 +14,7 @@ dependencies:
     sdk: flutter
   dependency_provider: ^0.0.1
   base_bloc: ^0.0.2
-  clean_architecture_components: 1.0.0
+  clean_architecture_components: ^1.0.0
   fluttertoast: ^8.0.7
   logger: ^1.0.0
 
