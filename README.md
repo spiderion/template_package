@@ -194,7 +194,7 @@ Here is an overview of how the comunication between these elements will work
 
  /// if you don't have a custom analytics you can use a default one AnalyticsProxy()
  /// The params passed in the constructor of the Bloc are very custom and with no limitations like getIt
- final page = MyWidget(() => MyBloc(AnalyticsProxy([], enable: false)));
+ final page = MyWidget(() => MyBloc());
  ```
 
 ## Navigation
@@ -212,7 +212,7 @@ class NavigateToMyPage extends BaseBlocPrimaryState {
 
   @override
   call(context) {
-    final page = MyWidget(() => MyBloc(AnalyticsProxy([], enable: false)));
+    final page = MyWidget(() => MyBloc());
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => page)).then((value) {
       return onPop?.call(value);
     });
