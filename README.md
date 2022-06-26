@@ -201,6 +201,9 @@ Here is an overview of how the comunication between these elements will work
  final page = MyWidget(() => MyBloc(AnalyticsProxy([], enable: false)));
  ```
 
+### Navigation
+
+https://www.youtube.com/watch?v=31tItITkkEs
 
 #### Navigation class
 
@@ -226,7 +229,7 @@ class NavigateToMyPage extends BaseBlocPrimaryState {
 
 
 ```dart
-NavigateToMyPage(params).call(context)
+NavigateToMyPage(params).call(context);
 ```
 
 #### How to navigate from a bloc
