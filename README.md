@@ -23,6 +23,10 @@ This package will give you a set of tools to speed up and keep clean the develop
 
 ## Getting Started
 
+### State Management
+
+https://www.youtube.com/watch?v=31tItITkkEs
+
 #### Convert the widget
 
 Let's start by converting your StatefullWidget in a widget that accepts states from the bloc (TemplageBloc)
