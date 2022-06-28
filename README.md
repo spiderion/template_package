@@ -241,7 +241,7 @@ class NavigateToMyPage extends BaseBlocPrimaryState {
 
 https://www.youtube.com/watch?v=WWaI2dvCdBk
 
-#### Create one ore more SubModule (A place to create SomeModules)
+#### Create one or more SubModule (A place to create SomeModules)
 
 ```dart
 class BlocSubModule extends ISubModule {
