@@ -1,3 +1,6 @@
+## [2.0.2] - 25/06/2022. breaking changes
+Documentation update
+
 ## [2.0.1] - 25/06/2022. breaking changes
 Documentation update
 

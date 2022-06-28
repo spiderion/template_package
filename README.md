@@ -199,7 +199,7 @@ Here is an overview of how the comunication between these elements will work
 
 ## Navigation
 
-https://www.youtube.com/watch?v=31tItITkkEs
+https://www.youtube.com/watch?v=ErPXlRS5ACY
 
 #### Navigation class
 
@@ -237,7 +237,117 @@ class NavigateToMyPage extends BaseBlocPrimaryState {
 }
 ```
 
-### Architecture
+## Dependency injection
+
+https://www.youtube.com/watch?v=WWaI2dvCdBk
+
+#### Create one ore more SubModule (A place to create SomeModules)
+
+```dart
+class BlocSubModule extends ISubModule {
+  // late ServiceSubModule serviceSubModule;
+
+  @override
+  init(List<ISubModule> subModules) {
+    // You can get access to all the subModules of your app from this method
+    // serviceSubModule = subModules.singleWhere((element) => element is ServiceSubModule) as ServiceSubModule;
+  }
+
+  SecondBloc secondBloc(String someData) => SecondBloc(someData, serviceSubModule.userService());
+}
+```
+
+#### Create the module that will initialise all your submodules
+
+```dart
+class DependencyModule extends BaseDependencyModule {
+  @override
+  List<ISubModule> createSubmodules() {
+    return [
+      BlocSubModule(),
+      // ServiceSubModule()
+      // CoreSubModule()
+    ];
+  }
+}
+```
+
+#### Create a provider, this will allow access to the subModules you need
+
+99% of the cases you should only need access to the blocSubModule
+
+```dart 
+class DProvider extends InheritedWidget {
+  final List<ISubModule> _subModuleList;
+
+  @override
+  bool updateShouldNotify(InheritedWidget oldWidget) => true;
+
+  ///Must be initialized only on the top of the widget three (Should Be The App Parent)
+  const DProvider(this._subModuleList, {required Widget child, Key? key}) : super(child: child, key: key);
+
+  static DProvider? of(BuildContext context) => context.dependOnInheritedWidgetOfExactType<DProvider>();
+
+  ///Bloc SubModule
+  BlocSubModule get blocSubModule => _subModuleList.whereType<BlocSubModule>().first;
+  
+  ///Bloc SubModule
+  EbrSubModule get ebrSubModule => _subModuleList.whereType<EbrSubModule>().first;
+}
+```
+
+#### Initialize the Dependency Module
+
+Initialise your DependencyModule and pass all the submodules to the DependencyProvider Make sure
+your App is wrapped by DProvider
+
+```dart 
+void main() {
+  final dependencyModule = DependencyModule();
+  final app = DProvider(dependencyModule.getReadySubModules(), child: const MyApp());
+  runApp(app);
+}
+
+```
+
+#### Get your dependency
+
+```dart 
+
+final exampleDependency = DProvider.of(context)!.myCustomSubModule.myCustomDependency();
+
+SecondPage(() => DProvider.of(context)!.blocSubModule.secondBloc(someData));
+
+```
+
+## UseCases
+
+```dart 
+class SomeUseCase extends UseCase<InitialRepository> {
+  SomeUseCase(InitialRepository repository) : super(repository);
+
+  Future<void> getSomeData(RequestObserver<dynamic, SomeModel?> requestObserver) async {
+    await repository.getSomeData(RequestObserver<dynamic, SomeModel?>(
+        onListen: (SomeModel? data) {
+          // some extra logic
+          requestBehaviour.onListen?.call(data);
+        },
+        onError: requestBehaviour.onError));
+  }
+
+  Future<void> setSomeData(RequestObserver<SomeModel?, dynamic> requestObserver) async {
+    await repository.setSomeData(RequestObserver<SomeModel?, dynamic>(
+        requestData: requestBehaviour.requestData,
+        onListen: (_) {
+          requestBehaviour.onListen?.call(_);
+        },
+        onError: requestBehaviour.onError));
+  }
+}
+
+```
+
+### Full Clean Architecture Overview
 
 ![Alt text](readme_images/architecture.png?raw=true "Architecture")
 
