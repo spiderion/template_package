@@ -11,7 +11,8 @@ abstract class TemplateBloc extends BaseBloc {
   @override
   void postUiEvent(BaseBlocEvent event) {
     if (event.analyticEventName?.isNotEmpty == true) {
-      analytics.logEvent(event.analyticEventName!.toLowerCase(), [...?analyticFrameworkTypes]);
+      analytics.logEvent(event.analyticEventName!.toLowerCase(), [...?analyticFrameworkTypes],
+          properties: event.eventProperties ?? {});
     }
   }
 
