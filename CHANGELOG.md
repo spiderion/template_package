@@ -1,3 +1,6 @@
+## [2.0.3] - 18/10/2022. breaking changes
+Add MessageSnackBarState
+
 ## [2.0.2] - 25/06/2022. breaking changes
 Documentation update
 
@@ -34,8 +37,6 @@ Update documentation and add examples in the example folder
 
 ## [1.0.2] - 10/03/2022.
 Add example code description
-
-## [1.0.1] - 10/03/2022.
 
 ## [1.0.0] - 01/03/2022.
 first release
