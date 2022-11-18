@@ -19,7 +19,7 @@ class MessageInfoState extends BaseBlocPrimaryState {
     Fluttertoast.showToast(
         msg: "${elementNameMessage ?? ""} ${Translations.of(param)!.text(message)}",
         backgroundColor: color ?? Theme.of(param).colorScheme.secondary,
-        textColor: color ?? Theme.of(param).colorScheme.onSecondary,
+        textColor: textColor ?? Theme.of(param).colorScheme.onSecondary,
         toastLength: length ?? Toast.LENGTH_LONG,
         gravity: toastGravity ?? ToastGravity.CENTER);
   }
@@ -28,6 +28,28 @@ class MessageInfoState extends BaseBlocPrimaryState {
 class ContinueState extends BaseBlocPrimaryState {
   @override
   void call(BuildContext param) {}
+}
+
+class MessageSnackBarState extends BaseBlocPrimaryState {
+  final String? message;
+  final String? elementNameMessage;
+  final Color? color;
+  final Color? textColor;
+
+  MessageSnackBarState(this.message, {this.textColor, this.elementNameMessage, this.color});
+
+  @override
+  call(context) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(
+        Translations.of(context)?.text(message ?? '') ?? '',
+        style: TextStyle(
+          color: textColor ?? Theme.of(context).colorScheme.onSurface,
+        ),
+      ),
+      backgroundColor: color ?? Theme.of(context).colorScheme.secondaryContainer,
+    ));
+  }
 }
 
 /// Useful state to pop a page directly from your bloc
