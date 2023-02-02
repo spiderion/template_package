@@ -1,3 +1,7 @@
+## [2.0.4] - 18/10/2022. breaking changes
+Some analytics fail to be initialized when the app is first time opened,
+So we now need to manually initialize the analytics
+
 ## [2.0.3] - 18/10/2022. breaking changes
 Add MessageSnackBarState
 
