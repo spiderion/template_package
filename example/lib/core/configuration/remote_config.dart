@@ -28,4 +28,14 @@ class RemoteConfig extends RemoteConfiguration {
     // TODO: implement getInt
     throw UnimplementedError();
   }
+
+  @override
+  void addListener(Function() listener) {
+    // TODO: implement addListener
+  }
+
+  @override
+  void removeListener(Function() listener) {
+    // TODO: implement removeListener
+  }
 }

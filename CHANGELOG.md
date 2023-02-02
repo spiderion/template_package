@@ -1,3 +1,5 @@
+## [2.0.6] - 02/01/2023. breaking changes
+remove compilation error
 ## [2.0.5] - 02/01/2023. breaking changes
 Update dependencies
 ## [2.0.4] - 18/10/2022. breaking changes
