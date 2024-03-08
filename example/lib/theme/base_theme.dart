@@ -14,7 +14,8 @@ ThemeData baseTheme = ThemeData(
     outlinedButtonTheme: _outlineButtonThemeData(),
     dialogTheme: DialogTheme(
         backgroundColor: baseColorScheme.background,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(MaterialConstants.ALERT_DIALOG_RADIUS)),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(MaterialConstants.ALERT_DIALOG_RADIUS)),
         contentTextStyle: TextStyle()),
     buttonTheme: ButtonThemeData(buttonColor: baseColorScheme.primary, shape: StadiumBorder()),
     fontFamily: MaterialFont.PRIMARY);
@@ -39,10 +40,10 @@ MaterialColor primarySwatch = Colors.yellow;
 ColorScheme baseColorScheme = ColorScheme.dark(
     primary: Color(0xFF28AFFA),
     onPrimary: Color(0xFFFFFFFF),
-    primaryVariant: Color(0xFF054A91),
+    primaryContainer: Color(0xFF054A91),
     secondary: Color(0xFFA823CD),
     onSecondary: Color(0xFFFFFFFF),
-    secondaryVariant: Color(0xFFF3762C),
+    secondaryContainer: Color(0xFFF3762C),
     background: Color.fromRGBO(24, 28, 34, 1),
     error: Color(0xFFB00020),
     onError: Color(0xFFFFFFFF));

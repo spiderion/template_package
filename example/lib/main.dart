@@ -9,5 +9,4 @@ void main() {
   final subModules = dependencyModule.getReadySubModules();
   /// Run the app with all the modules already created
   runApp(App(subModules));
-
 }

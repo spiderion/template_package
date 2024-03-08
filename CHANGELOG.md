@@ -1,3 +1,7 @@
+## [2.0.8] - 08/03/2024. improvements
+add method to initialize bloc after widget is displayed
+## [2.0.7] - 15/09/2023. improvements
+remove compilation error
 ## [2.0.6] - 02/01/2023. breaking changes
 remove compilation error
 ## [2.0.5] - 02/01/2023. breaking changes

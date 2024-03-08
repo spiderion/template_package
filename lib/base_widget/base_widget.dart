@@ -21,6 +21,9 @@ abstract class BaseState<PageType extends BaseWidget, BlocType extends BaseBloc>
     bloc = widget.getBloc() as BlocType;
     bloc.baseState.listen(onBlocStateChanged);
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      bloc.afterWidgetBinding();
+    });
   }
 
   String translate(String? text, {BuildContext? context, Map<String, String?>? arguments}) {
