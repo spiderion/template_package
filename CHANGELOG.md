@@ -1,3 +1,5 @@
+## [2.0.9] - 18/05/2024. improvements
+upgrade to new flutter version
 ## [2.0.8] - 08/03/2024. improvements
 add method to initialize bloc after widget is displayed
 ## [2.0.7] - 15/09/2023. improvements

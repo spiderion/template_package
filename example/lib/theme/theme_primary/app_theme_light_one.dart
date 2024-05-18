@@ -6,13 +6,13 @@ ThemeData appThemeLight = baseTheme.copyWith(
   brightness: _colorScheme.brightness,
   unselectedWidgetColor: _colorScheme.onSurface.withOpacity(0.55),
   textTheme: _textTheme,
-  scaffoldBackgroundColor: _colorScheme.background,
+  scaffoldBackgroundColor: _colorScheme.surface,
   colorScheme: _colorScheme,
   cardColor: _colorScheme.surface,
   bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: _colorScheme.surface),
-  tabBarTheme: TabBarTheme(labelColor: _colorScheme.background),
+  tabBarTheme: TabBarTheme(labelColor: _colorScheme.surface),
   appBarTheme:
-      baseTheme.appBarTheme.copyWith(backgroundColor: _colorScheme.background, titleTextStyle: _textTheme.headline6),
+      baseTheme.appBarTheme.copyWith(backgroundColor: _colorScheme.surface, titleTextStyle: _textTheme.titleLarge),
   elevatedButtonTheme: baseTheme.elevatedButtonTheme,
   cardTheme:
       CardTheme(color: _colorScheme.surface, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
@@ -23,6 +23,4 @@ TextTheme _textTheme = ThemeData.light().textTheme;
 ColorScheme _colorScheme = baseColorScheme.copyWith(
     surface: Colors.white,
     onSurface: Colors.black,
-    background: Colors.white,
-    onBackground: Colors.black,
     brightness: Brightness.light);

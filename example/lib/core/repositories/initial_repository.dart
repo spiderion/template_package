@@ -12,7 +12,7 @@ class InitialRepository extends BaseRepository {
     try {
       final result = await _dao.getSomeData();
       requestBehaviour.onListen?.call(SomeModel.fromJson(result));
-    } catch (e, s) {
+    } catch (e) {
       requestBehaviour.onError?.call(ServerError(message: e.toString()));
       requestBehaviour.onDone?.call();
     }
@@ -22,7 +22,7 @@ class InitialRepository extends BaseRepository {
     try {
       final result = await _dao.setSomeData(requestBehaviour.requestData!.toJson());
       requestBehaviour.onListen?.call(result);
-    } catch (e, s) {
+    } catch (e) {
       requestBehaviour.onError?.call(ServerError(message: e.toString()));
       requestBehaviour.onDone?.call();
     }

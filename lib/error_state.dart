@@ -23,7 +23,7 @@ class ErrorState extends AbstractErrorState {
     Fluttertoast.showToast(
         msg: translate(context, error.message ?? ''),
         toastLength: Toast.LENGTH_LONG,
-        backgroundColor: Theme.of(context).errorColor,
+        backgroundColor: Theme.of(context).colorScheme.error,
         gravity: ToastGravity.CENTER);
   }
 }
