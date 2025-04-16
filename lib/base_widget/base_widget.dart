@@ -2,6 +2,7 @@ import 'package:base_bloc/bloc/base_bloc.dart';
 import 'package:base_bloc/bloc/primary_state.dart';
 import 'package:flutter/material.dart';
 import 'package:template_package/locale/translations.dart';
+
 /// Base class to extend
 /// Use this when you want to manage your state with a bloc
 abstract class BaseWidget extends StatefulWidget {
@@ -24,6 +25,18 @@ abstract class BaseState<PageType extends BaseWidget, BlocType extends BaseBloc>
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       bloc.afterWidgetBinding();
     });
+  }
+
+  @override
+  void didChangeDependencies() {
+    bloc.didChangeDependencies();
+    super.didChangeDependencies();
+  }
+
+  @override
+  void didUpdateWidget(oldWidget) {
+    bloc.didUpdateWidget();
+    super.didUpdateWidget(oldWidget);
   }
 
   String translate(String? text, {BuildContext? context, Map<String, String?>? arguments}) {

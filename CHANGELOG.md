@@ -1,3 +1,5 @@
+## [2.1.0] - 16/04/2025. improvements
+add didChangeDependencies to bloc
 ## [2.0.9] - 18/05/2024. improvements
 upgrade to new flutter version
 ## [2.0.8] - 08/03/2024. improvements
