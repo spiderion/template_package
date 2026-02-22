@@ -42,7 +42,8 @@ class _AppState extends State<App> {
       localizationsDelegates: [
         getTranslationDelegate(),
         GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: getTranslationDelegate().supportedLocales,
     );

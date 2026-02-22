@@ -2,7 +2,7 @@ name: template_package
 description: >-
   A Set of tools to speed up and keep clean the development of your app.
 
-version: 2.1.0
+version: 2.1.1
 homepage: https://github.com/spiderion/template_package
 
 environment:
@@ -15,7 +15,7 @@ dependencies:
   dependency_provider: ^0.0.1
   base_bloc: ^0.0.4
   clean_architecture_components: ^1.0.1
-  fluttertoast: ^8.2.12
+  fluttertoast: ^9.0.0
   logger: ^2.5.0
 
 dev_dependencies:

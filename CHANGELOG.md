@@ -1,3 +1,5 @@
+## [2.11] - 22/02/2026. improve translation loading
+improve translation loading
 ## [2.1.0] - 16/04/2025. improvements
 add didChangeDependencies to bloc
 ## [2.0.9] - 18/05/2024. improvements

@@ -11,16 +11,11 @@ ThemeData appThemeDark = baseTheme.copyWith(
   scaffoldBackgroundColor: _colorScheme.surface,
   bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: _colorScheme.surface),
   elevatedButtonTheme: baseTheme.elevatedButtonTheme,
-  tabBarTheme: TabBarTheme(labelColor: _colorScheme.surface),
-  appBarTheme:
-      baseTheme.appBarTheme.copyWith(backgroundColor: _colorScheme.surface, titleTextStyle: _textTheme.titleLarge),
-  cardTheme:
-      CardTheme(color: _colorScheme.surface, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
+  appBarTheme: baseTheme.appBarTheme
+      .copyWith(backgroundColor: _colorScheme.surface, titleTextStyle: _textTheme.titleLarge),
 );
 
 TextTheme _textTheme = ThemeData.dark().textTheme;
 
 ColorScheme _colorScheme = baseColorScheme.copyWith(
-    surface: Color.fromRGBO(40, 42, 54, 1),
-    onSurface: Colors.white,
-    brightness: Brightness.dark);
+    surface: Color.fromRGBO(40, 42, 54, 1), onSurface: Colors.white, brightness: Brightness.dark);

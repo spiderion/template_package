@@ -6,17 +6,11 @@ ThemeData baseTheme = ThemeData(
     colorScheme: baseColorScheme,
     primarySwatch: primarySwatch,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: Colors.red),
-    cardTheme: CardTheme(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
     appBarTheme: AppBarTheme(backgroundColor: baseColorScheme.surface, centerTitle: true),
     textTheme: _textTheme,
     shadowColor: Colors.black12,
     elevatedButtonTheme: _elevatedButtonTheme,
     outlinedButtonTheme: _outlineButtonThemeData(),
-    dialogTheme: DialogTheme(
-        backgroundColor: baseColorScheme.surface,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(MaterialConstants.ALERT_DIALOG_RADIUS)),
-        contentTextStyle: TextStyle()),
     buttonTheme: ButtonThemeData(buttonColor: baseColorScheme.primary, shape: StadiumBorder()),
     fontFamily: MaterialFont.PRIMARY);
 
