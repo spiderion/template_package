@@ -11,7 +11,10 @@ class CoreSubModule extends ISubModule {
   BaseAnalytics? _analytics;
 
   @override
-  init(List<ISubModule> subModules) {}
+  setUp(List<ISubModule> subModules) {}
+
+  @override
+  Future<void> initialize() async {}
 
   BaseAnalytics analytics() {
     _analytics ??= AnalyticsProxy([], enable: true);

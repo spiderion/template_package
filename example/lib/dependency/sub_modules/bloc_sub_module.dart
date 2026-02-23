@@ -11,12 +11,15 @@ class BlocSubModule extends ISubModule {
   late UseCaseSubModule _useCaseSubModule;
 
   @override
-  init(List<ISubModule> subModules) {
+  setUp(List<ISubModule> subModules) {
     /// You can add all your subModules here if you like
     /// Then use them to get the dependencies required by your blocs
     _coreSubModule = subModules.singleWhere((element) => element is CoreSubModule) as CoreSubModule;
     _useCaseSubModule = subModules.singleWhere((element) => element is UseCaseSubModule) as UseCaseSubModule;
   }
+
+  @override
+  Future<void> initialize() async {}
 
   /// create a method for each of your blocs
   InitialBloc rootBloc() => InitialBloc(_coreSubModule.analytics(), _useCaseSubModule.userUseCase());

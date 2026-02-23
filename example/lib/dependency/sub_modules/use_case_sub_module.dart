@@ -7,10 +7,13 @@ class UseCaseSubModule extends ISubModule {
   late RepositorySubModule _repositorySubModule;
 
   @override
-  init(List<ISubModule> subModules) {
+  setUp(List<ISubModule> subModules) {
     _repositorySubModule =
         subModules.singleWhere((element) => element is RepositorySubModule) as RepositorySubModule;
   }
+
+  @override
+  Future<void> initialize() async {}
 
   SomeUseCase userUseCase() => SomeUseCase(_repositorySubModule.userRepository());
 }

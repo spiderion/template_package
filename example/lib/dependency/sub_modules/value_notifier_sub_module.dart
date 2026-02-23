@@ -7,7 +7,10 @@ class ValueNotifierSubModule implements ISubModule {
   late ThemeNotifier themeNotifier;
 
   @override
-  init(List<ISubModule> subModules) {
+  setUp(List<ISubModule> subModules) {
     themeNotifier = ThemeNotifier(appThemeDark);
   }
+
+  @override
+  Future<void> initialize() async {}
 }

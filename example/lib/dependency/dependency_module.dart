@@ -30,4 +30,9 @@ class DependencyModule extends BaseDependencyModule {
       LocaleSubModule(),
     ];
   }
+
+  @override
+  Future<void> initialize() async {
+    await Future.wait(getReadySubModules().map((subModule) => subModule.initialize()));
+  }
 }

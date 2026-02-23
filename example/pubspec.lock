@@ -69,10 +69,10 @@ packages:
     dependency: transitive
     description:
       name: dependency_provider
-      sha256: "12ae823cabb533b3a029f8ae829ba6b11f8b330f760686ad35062c969915f5c7"
+      sha256: a50b8ff771c61fe7b7d81609834f53045e539e4f0dc691e7354a7079c2c10678
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.1"
+    version: "0.0.2"
   equatable:
     dependency: transitive
     description:

@@ -8,11 +8,14 @@ class ABRSubModule implements ISubModule {
   late BlocSubModule _blocSubModule;
 
   @override
-  init(List<ISubModule> subModules) {
+  setUp(List<ISubModule> subModules) {
     _blocSubModule = subModules.whereType<BlocSubModule>().first;
   }
 
   CountryCodeAbr get countryCodeAbr => CountryCodeAbr();
 
   FirstPageLauncherABR firstPageLauncherABR() => FirstPageLauncherABR(_blocSubModule);
+
+  @override
+  Future<void> initialize() async {}
 }

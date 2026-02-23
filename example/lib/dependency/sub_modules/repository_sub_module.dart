@@ -7,9 +7,12 @@ class RepositorySubModule extends ISubModule {
   late CoreSubModule _coreSubModule;
 
   @override
-  init(List<ISubModule> subModules) {
+  setUp(List<ISubModule> subModules) {
     _coreSubModule = subModules.singleWhere((element) => element is CoreSubModule) as CoreSubModule;
   }
+
+  @override
+  Future<void> initialize() async {}
 
   InitialRepository userRepository() =>
       InitialRepository(_coreSubModule.remoteConfig(), _coreSubModule.dao());
